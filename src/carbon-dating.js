@@ -23,10 +23,8 @@ function dateSample(sampleActivity) {
   if (parseInt(sampleActivity) <= 0 || parseInt(sampleActivity) >= 15) return false
   return Math.ceil((Math.log(MODERN_ACTIVITY/(sampleActivity))*HALF_LIFE_PERIOD)/Math.log(2));
 }
-// (ln(MODERN_ACTIVITY/A)*HALF_LIFE_PERIOD)/ln(2)
-console.log(dateSample('3.142')) //12926
-console.log(dateSample('3')) //13308
-console.log(dateSample('15'))
+
+
 
 
 module.exports = {
