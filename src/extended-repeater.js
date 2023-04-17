@@ -1,4 +1,3 @@
-const { resume } = require('browser-sync');
 const { NotImplementedError } = require('../extensions/index.js');
 
 /**
