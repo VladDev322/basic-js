@@ -15,7 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-function repeater(/*str, options*/) {
+function repeater(str, options) {
   let result = ''
   if (options.separator === undefined) {
     for (let i = 0; i < options.repeatTimes; i++) {
