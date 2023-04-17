@@ -1,3 +1,4 @@
+const { resume } = require('browser-sync');
 const { NotImplementedError } = require('../extensions/index.js');
 
 /**
@@ -15,9 +16,36 @@ const { NotImplementedError } = require('../extensions/index.js');
  * => 'STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS**STRINGPLUS00PLUS00PLUS'
  *
  */
-function repeater(/* str, options */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function repeater(str, options) {
+  let result = ''
+  if (options.separator === undefined) {
+    for (let i = 0; i < options.repeatTimes; i++) {
+      result += str
+      if (i != options.repeatTimes - 1) result += '+'
+    }
+  }
+  else if (options.addition === undefined) {
+    for (let i = 0; i < options.repeatTimes; i++) {
+      result += str
+      if (i != options.repeatTimes - 1) result += options.separator
+    }
+  }
+  else if (options.addition === undefined) {
+    for (let i = 0; i < options.repeatTimes; i++) {
+      result += str
+      if (i != options.repeatTimes - 1) result += options.separator
+    }
+  }
+  else if (options.additionSeparator === undefined) {
+    for (let i = 0; i < options.repeatTimes; i++) {
+      result += str
+      for (let i = 0; i < options.additionRepeatTimes; i++) {
+        result += options.addition
+      }
+      if (i != options.repeatTimes - 1) result += options.separator
+    }
+  }
+  return result
 }
 
 module.exports = {
